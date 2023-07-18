@@ -115,6 +115,7 @@ export default function NavigationBa(): JSX.Element {
         <NavigationButton content="Write" route="write"></NavigationButton>
         <NavigationButton content="Capture" route="capture"></NavigationButton>
         <NavigationButton content="Create" route="create"></NavigationButton>
+        <NavigationButton content="Login" route="login"></NavigationButton>
       </NavigationButtonsContainer>
     </BlackBar>
   );

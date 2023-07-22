@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import EditIcon from "@mui/icons-material/Edit";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import React from 'react';
+import styled from 'styled-components';
+import EditIcon from '@mui/icons-material/Edit';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 export default class Home extends React.Component {
   render() {
@@ -32,13 +32,13 @@ export default class Home extends React.Component {
       width: 450px;
       font-size: 26px;
       border-radius: 30px;
-      background-color: white;
+      background-color: #eaeaea;
       padding: 8px 48px;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 40px;
       &:hover {
-        cursor: pointer; 
+        cursor: pointer;
       }
     `;
 
@@ -57,9 +57,7 @@ export default class Home extends React.Component {
     return (
       <div>
         <HomeTitleComponent>Hi 👋🏻</HomeTitleComponent>
-        <HomeSubtitleComponent>
-          This is personal repository where I
-        </HomeSubtitleComponent>
+        <HomeSubtitleComponent>This is personal repository where I</HomeSubtitleComponent>
         <ActivityContainer>
           <IconWrapper>
             <EditIcon fontSize="large" />

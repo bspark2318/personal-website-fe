@@ -61,9 +61,9 @@ const config: Configuration = {
     new ForkTsCheckerWebpackPlugin({
       async: false,
     }),
-    new ESLintPlugin({
-      extensions: ["js", "jsx", "ts", "tsx"],
-    }),
+    // new ESLintPlugin({
+    //   extensions: ["ts", "tsx"],
+    // }),
   ],
   devtool: "inline-source-map",
 

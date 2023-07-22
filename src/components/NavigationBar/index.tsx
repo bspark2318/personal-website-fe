@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { useSpring, animated as a, useSpringRef, useChain } from "react-spring";
-import NavigationButton from "components/NavigationButton/index";
-import { NavLink, useLocation } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { useSpring, animated as a, useSpringRef, useChain } from 'react-spring';
+import NavigationButton from 'components/NavigationButton/index';
+import { NavLink, useLocation } from 'react-router-dom';
 
-export default function NavigationBa(): JSX.Element {
+export default function NavigationBar(): JSX.Element {
   const BlackBar = styled.div`
     width: 100%;
     background-color: #2b2424;
@@ -25,57 +25,51 @@ export default function NavigationBa(): JSX.Element {
     from: { x: -400 },
     to: { x: 0 },
     delay: 500,
-    ref: slideInRef,
+    ref: slideInRef
   });
 
   const tiltRightRef = useSpringRef();
   const tiltRightAnimation = useSpring({
     ref: tiltRightRef,
-    transform: "rotate(13deg)",
+    transform: 'rotate(13deg)',
     from: {
-      transform: "rotate(0deg)",
+      transform: 'rotate(0deg)'
     },
-    delay: 500,
+    delay: 500
   });
 
   const tiltLeftRef = useSpringRef();
   const tiltLeftAnimation = useSpring({
     ref: tiltLeftRef,
-    transform: "rotate(-21deg)",
+    transform: 'rotate(-21deg)',
     from: {
-      transform: "rotate(0deg)",
+      transform: 'rotate(0deg)'
     },
-    delay: 270,
+    delay: 270
   });
 
   const tiltRightAgainRef = useSpringRef();
   const tiltRightAgainAnimation = useSpring({
     ref: tiltRightAgainRef,
-    transform: "rotate(5deg)",
+    transform: 'rotate(5deg)',
     from: {
-      transform: "rotate(0deg)",
+      transform: 'rotate(0deg)'
     },
-    delay: 1200,
+    delay: 1200
   });
 
   const tiltRightAgainAgainRef = useSpringRef();
   const tiltRightAgainAgainAnimation = useSpring({
     ref: tiltRightAgainAgainRef,
-    transform: "rotate(3deg)",
+    transform: 'rotate(3deg)',
     from: {
-      transform: "rotate(0deg)",
+      transform: 'rotate(0deg)'
     },
-    delay: 3700,
+    delay: 3700
   });
 
   useChain(
-    [
-      slideInRef,
-      tiltRightRef,
-      tiltLeftRef,
-      tiltRightAgainRef,
-      tiltRightAgainAgainRef,
-    ],
+    [slideInRef, tiltRightRef, tiltLeftRef, tiltRightAgainRef, tiltRightAgainAgainRef],
     [0, 0.2, 0.7, 0.8, 1]
   );
 
@@ -93,7 +87,7 @@ export default function NavigationBa(): JSX.Element {
 
   const location = useLocation();
 
-  const renderAnimation = location.pathname == "/";
+  const renderAnimation = location.pathname == '/';
 
   return (
     <BlackBar>
@@ -103,7 +97,7 @@ export default function NavigationBa(): JSX.Element {
             <a.div style={renderAnimation ? tiltRightAnimation : {}}>
               <a.div style={renderAnimation ? tiltRightAgainAnimation : {}}>
                 <a.div style={renderAnimation ? tiltRightAgainAgainAnimation : {}}>
-                  <StyledNavLink to={"/"}>Do Wrong Park</StyledNavLink>
+                  <StyledNavLink to={'/'}>Do Wrong Park</StyledNavLink>
                 </a.div>
               </a.div>
             </a.div>

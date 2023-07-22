@@ -1,51 +1,94 @@
 import React from "react";
 import styled from "styled-components";
 
-console.log("Hello World");
 
 export default class Login extends React.Component {
   
   render() {
     
+    const Canvas =  styled.div`
+        display: flex;
+        justify-content: center; /* horizontally center */
+        align-items: center; /* vertically center */
+        width: 100%;
+        height: 100%;
+        margin-top: 10%;
+    `;
+
     const LogInBoxComponent = styled.div`
-      background-color: white;
+      /* background-color: white;
+      width: 30%;
+      height: 30%; 
+      justify-content: center;
+      border-radius: 6%; */
+      padding-left: 12px;
+      padding-right: 12px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
     `;
 
     const LoginTitleComponent = styled.div`
-      font-size: 78px;
+      font-size: 20px;
+      font-weight: bold;
       font-family: Rokkitt;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 10px;
+      margin-bottom: 20px;
       width: 100%;
-      text-shadow: 2px 2px #a3a2a2;
       text-align: center;
-      margin-top: 180px;
+    `;
+    
+    const LoginForm = styled.form`
+      display: flex;
+  flex-direction: column;
+  align-items: center;
     `;
 
-    const LoginSubtitleComponent = styled.div`
-      font-size: 32px;
-      font-family: Rokkitt;
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
-      text-align: center;
-      margin-top: 88px;
-      line-height: 1.5;
-      margin-bottom: 88px;
+    const LoginLabel = styled.label`
+       font-weight: bold;
+  margin-bottom: 8px;
     `;
+
+    const LoginInput  = styled.input`
+       width: 100%;
+    padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+    `
+
+    
+    const Auth0Login = styled.a`
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    `
+
 
     return (
-      <div>
+      <Canvas>
         <LogInBoxComponent>
         <LoginTitleComponent>Login</LoginTitleComponent>
-        <LoginSubtitleComponent>
-          Welcome to my playground. This is where I encourage myself <br/>
-          to make a lot of mistakes and learn and grow from them. <br/>
-          If you have any questions, recommendations, and/or concerns, feel free <br/>
-          to reach out through the contact page. Otherwise, have fun visiting!<br/>
-        </LoginSubtitleComponent>
+        
+        <LoginForm>
+          <LoginLabel >Username</LoginLabel>
+          <LoginInput type="text" id="username" name="username"></LoginInput>
+          <LoginLabel >Password</LoginLabel>
+          <LoginInput type="password" id="password" name="password"></LoginInput>
+        </LoginForm>
+        <Auth0Login href="https://www.example.com">Click Me</Auth0Login>
         </LogInBoxComponent>
-      </div>
+      </Canvas>
     );
   }
 }
